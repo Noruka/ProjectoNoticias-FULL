@@ -1,0 +1,21 @@
+<div class="col-md-4" *ngFor="let noticia of noticias">
+  <div class="card" style="width: 18rem;">
+    <img [src]="noticia.imagen" class="card-img-top">
+    <div class="card-body">
+      <h4 class="card-title">{{ noticia.titulo }}</h4>
+      <h5 class="card-subtitle">{{ noticia.subtitulo }}</h5>
+      <br>
+      <p class="card-text">{{ noticia.contenido }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ noticia.autor }}</li>
+      <li class="list-group-item">{{ noticia.fecha  | date: 'yyyy-MM-dd' }}</li>
+    </ul>
+    <div class="card-body">
+      <a href="" class="btn btn-info btn-block" [routerLink]="['/noticias/edit',noticia.id]">Editar noticia</a>
+      <button class="btn btn-danger btn-block" (click)="deleteNoticia(noticia.id)"><i class="far fa-trash-alt"></i></button>
+    </div>
+  </div>
+</div>
+
+

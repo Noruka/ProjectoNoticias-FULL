@@ -1,0 +1,32 @@
+[
+    {
+      "icon": "flash",
+      "name": "inicio",
+      "redirectTo": "/"
+    },
+    {
+      "icon": "flame",
+      "name": "actualidad",
+      "redirectTo": "/actualidad"
+    },
+    {
+      "icon": "globe",
+      "name": "politica",
+      "redirectTo": "/politica"
+    },
+    {
+      "icon": "bicycle",
+      "name": "deporte",
+      "redirectTo": "/deporte"
+    },{
+    "icon": "analytics",
+    "name": "economia",
+    "redirectTo": "/economia"
+  },
+    {
+      "icon": "flag",
+      "name": "local",
+      "redirectTo": "/local"
+    }
+  ]
+
