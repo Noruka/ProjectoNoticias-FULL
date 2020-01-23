@@ -15,12 +15,13 @@ export class NoticiaFormComponent implements OnInit {
     imagen: "",
     titulo: "",
     subtitulo: "",
+    seccion: "",
     autor: "",
     fecha: new Date(),
     contenido: ""
   };
 
-  edit: boolean = false;
+  edit = false;
 
   @HostBinding('class') classes = 'row';
   constructor(private noticiasService: NoticiasService, private router: Router, private activatedRoute: ActivatedRoute) {
