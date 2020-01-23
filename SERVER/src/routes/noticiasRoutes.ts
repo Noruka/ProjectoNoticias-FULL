@@ -8,9 +8,9 @@ class NoticiasRoutes {
 
     config(): void {
         this.router.get('/', noticiasController.list);
+        this.router.get('/seccion/:seccion', noticiasController.getListSeccion);
         this.router.get('/:id', noticiasController.getOne);
-        this.router.get('/:seccion', noticiasController.getListSeccion);
-        this.router.post('/',noticiasController.create);
+        this.router.post('/', noticiasController.create);
         this.router.delete('/:id', noticiasController.delete);
         this.router.put('/:id', noticiasController.update);
     }

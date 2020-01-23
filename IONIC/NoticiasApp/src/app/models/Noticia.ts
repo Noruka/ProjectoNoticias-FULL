@@ -3,6 +3,7 @@ export interface Noticia {
     imagen?: string;
     titulo?: string;
     subtitulo?: string;
+    seccion?: string;
     autor?: string;
     fecha?: Date;
     contenido?: string;

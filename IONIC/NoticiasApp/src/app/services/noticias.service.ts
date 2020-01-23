@@ -21,7 +21,7 @@ export class NoticiasService {
   }
 
   getNoticiaSeccion(seccion: string) {
-    return this.http.get(`${this.API_URI}/noticias/${seccion}`);
+    return this.http.get(`${this.API_URI}/noticias/seccion/${seccion}`);
   }
 
   saveNoticia( noticia: Noticia ) {

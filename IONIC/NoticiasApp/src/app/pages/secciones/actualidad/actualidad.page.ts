@@ -3,8 +3,8 @@ import {Noticia} from "../../../models/Noticia";
 import {Observable} from "rxjs";
 import {Componente} from "../../../interfaces/componente";
 import {IonInfiniteScroll, MenuController} from "@ionic/angular";
-import {NoticiasService} from "../../../services/noticias.service";
 import {DataService} from "../../../services/data.service";
+import {NoticiasService} from "../../../services/noticias.service";
 
 @Component({
   selector: 'app-actualidad',
@@ -29,7 +29,7 @@ export class ActualidadPage implements OnInit {
 
     this.componentes = this.dataService.getMenuOpts();
 
-    this.getNoticias();
+    this.getNoticiaSeccion("Actualidad");
 
     this.loadData(null);
   }
@@ -45,7 +45,7 @@ export class ActualidadPage implements OnInit {
       this.contador = 0;
       this.pipo = 0;
 
-      this.getNoticias();
+      this.getNoticiaSeccion("Actualidad");
       this.loadData(null);
 
       event.target.complete();
@@ -56,7 +56,7 @@ export class ActualidadPage implements OnInit {
     console.log('Cargando siguientes ...');
     setTimeout(() => {
 
-      this.getNoticias();
+      this.getNoticiaSeccion("Actualidad");
 
       if ( this.data.length > this.noticias.length ) {
         event.target.complete();
@@ -82,13 +82,15 @@ export class ActualidadPage implements OnInit {
     }, 1000 );
   }
 
-  getNoticias() {
+  getNoticiaSeccion(seccion: string) {
 
-    this.noticiasService.getNoticias().subscribe(
+    this.noticiasService.getNoticiaSeccion(seccion).subscribe(
         res => {
+          console.log(res);
+          // @ts-ignore
           this.noticias = res;
-        },
-        err => console.error(err)
+          },
+            error => console.error(error)
     );
   }
 

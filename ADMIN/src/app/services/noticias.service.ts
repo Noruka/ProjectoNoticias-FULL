@@ -32,4 +32,7 @@ export class NoticiasService {
     return this.http.put(`${this.API_URI}/noticias/${id}`,updatedNoticia);
   }
 
+  getNoticiaSeccion(seccion: string) {
+    return this.http.get(`${this.API_URI}/noticias/seccion/${seccion}`);
+  }
 }

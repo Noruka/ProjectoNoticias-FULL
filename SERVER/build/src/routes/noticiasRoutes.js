@@ -12,8 +12,8 @@ class NoticiasRoutes {
     }
     config() {
         this.router.get('/', noticiasController_1.default.list);
+        this.router.get('/seccion/:seccion', noticiasController_1.default.getListSeccion);
         this.router.get('/:id', noticiasController_1.default.getOne);
-        this.router.get('/:seccion', noticiasController_1.default.getListSeccion);
         this.router.post('/', noticiasController_1.default.create);
         this.router.delete('/:id', noticiasController_1.default.delete);
         this.router.put('/:id', noticiasController_1.default.update);
