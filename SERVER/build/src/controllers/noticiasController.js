@@ -30,11 +30,11 @@ class NoticiasController {
             res.status(404).json({ text: 'La Noticia no existe' });
         });
     }
-    NumNoticias(req, res) {
+    getListSeccion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log("PIPO DEVUELVE");
-            const num = yield database_1.default.then((r) => r.query('SELECT COUNT(*) FROM noticias'));
-            res.json(num);
+            const { seccion } = req.params;
+            const noticias = yield database_1.default.then((r) => r.query('SELECT * FROM noticias WHERE seccion = ?', [seccion]));
+            return res.json(noticias);
         });
     }
     create(req, res) {
