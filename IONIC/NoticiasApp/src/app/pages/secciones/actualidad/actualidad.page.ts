@@ -79,6 +79,7 @@ export class ActualidadPage implements OnInit {
         }
       }
       this.data.push( ...nuevoArr);
+      event.target.complete();
     }, 1000 );
   }
 

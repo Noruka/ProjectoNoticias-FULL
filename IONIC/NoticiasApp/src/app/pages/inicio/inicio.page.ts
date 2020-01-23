@@ -19,7 +19,7 @@ export class InicioPage implements OnInit {
     componentes: Observable<Componente[]>;
 
     @ViewChild(IonInfiniteScroll, {static: false}) infiniteScroll: IonInfiniteScroll;
-    data: any[] = [];
+    data: Noticia[] = [];
 
     constructor(private noticiasService: NoticiasService, private menuCtrl: MenuController, @Inject(DataService) private dataService: DataService) {
 
@@ -78,6 +78,7 @@ export class InicioPage implements OnInit {
             }
         }
         this.data.push( ...nuevoArr);
+        event.target.complete();
         }, 1000 );
     }
 
