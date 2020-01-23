@@ -1,7 +1,30 @@
-<app-header titulo="Economia">
+<app-header titulo="{{ seccion }}">
 
 </app-header>
 
 <ion-content>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list>
+        <ion-item *ngFor="let noticia of data">
+            <ion-card mode="ios" color="primary" button="true" routerDirection="mostrar-noticia">
+                <ion-card-header>
+                    <img src="{{ noticia.imagen }}">
+                    <ion-card-title>{{ noticia.titulo }}</ion-card-title>
+                    <ion-card-subtitle>{{ noticia.autor }}</ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>
+        </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll threshold="50px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+                loadingSpinner="crescent"
+                loadingText="Cargando...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
 </ion-content>

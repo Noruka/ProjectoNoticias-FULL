@@ -13,6 +13,7 @@ import {NoticiasService} from "../../../services/noticias.service";
 })
 export class ActualidadPage implements OnInit {
 
+  seccion = "Actualidad";
   pipo = 0;
   contador = 0;
   noticias: Noticia[];
@@ -29,7 +30,7 @@ export class ActualidadPage implements OnInit {
 
     this.componentes = this.dataService.getMenuOpts();
 
-    this.getNoticiaSeccion("Actualidad");
+    this.getNoticiaSeccion(this.seccion);
 
     this.loadData(null);
   }
@@ -45,7 +46,7 @@ export class ActualidadPage implements OnInit {
       this.contador = 0;
       this.pipo = 0;
 
-      this.getNoticiaSeccion("Actualidad");
+      this.getNoticiaSeccion(this.seccion);
       this.loadData(null);
 
       event.target.complete();
@@ -56,7 +57,7 @@ export class ActualidadPage implements OnInit {
     console.log('Cargando siguientes ...');
     setTimeout(() => {
 
-      this.getNoticiaSeccion("Actualidad");
+      this.getNoticiaSeccion(this.seccion);
 
       if ( this.data.length > this.noticias.length ) {
         event.target.complete();
@@ -78,7 +79,6 @@ export class ActualidadPage implements OnInit {
         }
       }
       this.data.push( ...nuevoArr);
-      event.target.complete();
     }, 1000 );
   }
 

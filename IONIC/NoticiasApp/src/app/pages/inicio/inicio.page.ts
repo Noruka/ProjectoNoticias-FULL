@@ -78,7 +78,6 @@ export class InicioPage implements OnInit {
             }
         }
         this.data.push( ...nuevoArr);
-        event.target.complete();
         }, 1000 );
     }
 
