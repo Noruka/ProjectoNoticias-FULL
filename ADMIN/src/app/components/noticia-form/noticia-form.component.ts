@@ -10,6 +10,14 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class NoticiaFormComponent implements OnInit {
 
+  secciones = [
+    'Actualidad',
+    'Politica',
+    'Economia',
+    'Local',
+    'Deportes'
+  ];
+
   noticia: Noticia = {
     id: 0,
     imagen: "",

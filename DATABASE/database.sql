@@ -13,4 +13,14 @@ CREATE TABLE noticias(
     contenido MEDIUMTEXT
 );
 
+CREATE TABLE comentarios(
+
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    noticiaId VARCHAR(255) NOT NULL,
+    nombre VARCHAR(255),
+    correo VARCHAR(255),
+    comentario MEDIUMTEXT
+);
+
 DESCRIBE noticias;
+DESCRIBE comentarios;

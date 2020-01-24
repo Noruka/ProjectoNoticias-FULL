@@ -10,6 +10,8 @@ class NoticiasRoutes {
         this.router.get('/', noticiasController.list);
         this.router.get('/seccion/:seccion', noticiasController.getListSeccion);
         this.router.get('/:id', noticiasController.getOne);
+        this.router.get('/comentarios/:id', noticiasController.getComentarios);
+        this.router.post('/comentarios/', noticiasController.postComentario);
         this.router.post('/', noticiasController.create);
         this.router.delete('/:id', noticiasController.delete);
         this.router.put('/:id', noticiasController.update);

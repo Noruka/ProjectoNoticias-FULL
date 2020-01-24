@@ -33,7 +33,7 @@ class NoticiasController {
     getListSeccion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { seccion } = req.params;
-            const noticias = yield database_1.default.then((r) => r.query('SELECT * FROM noticias WHERE seccion = ?', [seccion]));
+            const noticias = yield database_1.default.then((r) => r.query('SELECT * FROM noticias WHERE seccion = ? ORDER BY fecha DESC', [seccion]));
             return res.json(noticias);
         });
     }
@@ -55,6 +55,19 @@ class NoticiasController {
             const { id } = req.params;
             yield database_1.default.then((r) => r.query('UPDATE noticias set ? WHERE id = ?', [req.body, id]));
             res.json({ message: 'La Noticia se ha actualizado' });
+        });
+    }
+    getComentarios(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const comentarios = yield database_1.default.then((r) => r.query('SELECT * FROM comentarios WHERE noticiaId = ?', [id]));
+            return res.json(comentarios);
+        });
+    }
+    postComentario(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.then((r) => r.query('INSERT INTO comentarios set ?', [req.body]));
+            res.json({ message: 'Comentario guardado' });
         });
     }
 }

@@ -1,0 +1,53 @@
+<ion-card color="success">
+
+  <ion-card-content>
+    <form>
+      <ion-item>
+        <ion-input inoutmode="text" name="nombre" placeholder="Nombre" [(ngModel)]=" comentario.nombre" class="form-control" autofocus>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input inputmode="email" name="correo" placeholder="Correo" [(ngModel)]=" comentario.correo" class="form-control" autofocus>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-textarea maxlength="2000" inputmode="text" name="comentario" placeholder="Comentario" [(ngModel)]=" comentario.comentario" rows="2" class="form-control">
+          </ion-textarea>
+      </ion-item>
+
+      <ion-button class="btn btn-success btn-block" (click)="saveNewComentario()">
+        GUARDAR
+      </ion-button>
+    </form>
+  </ion-card-content>
+
+  <ion-card-header>
+    <ion-card-title>
+      Comentarios
+    </ion-card-title>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let comentario of data">
+          <ion-card mode="ios" color="secondary">
+            <ion-card-header>
+              <ion-card-title>{{ comentario.nombre }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-text>{{ comentario.comentario }}</ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+
+      <ion-infinite-scroll threshold="50px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+                loadingSpinner="crescent"
+                loadingText="Cargando...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-card-content>
+  </ion-card-header>
+
+</ion-card>

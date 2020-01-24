@@ -13,13 +13,15 @@
             <ion-card-subtitle>{{ noticia.subtitulo }}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-            <ion-card-subtitle>{{ noticia.autor }} - {{ noticia.fecha | date: 'yyyy-MM-dd' }}</ion-card-subtitle>
             <ion-text>
                 {{ noticia.contenido }}
             </ion-text>
+            <ion-card-subtitle>{{ noticia.autor }} - {{ noticia.fecha | date: 'yyyy-MM-dd' }}</ion-card-subtitle>
         </ion-card-content>
     </ion-card>
 
+    <app-comentarios>
 
+    </app-comentarios>
 
 </ion-content>
