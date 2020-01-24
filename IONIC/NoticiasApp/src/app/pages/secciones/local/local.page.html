@@ -10,7 +10,7 @@
 
     <ion-list>
         <ion-item *ngFor="let noticia of data">
-            <ion-card mode="ios" color="dark" button="true" [routerLink]="['/mostrar-noticia/',noticia.id]">
+            <ion-card mode="ios" color="primary" button="true" [routerLink]="['/mostrar-noticia/',noticia.id]">
                 <ion-card-header>
                     <img src="{{ noticia.imagen }}">
                     <ion-card-title>{{ noticia.titulo }}</ion-card-title>

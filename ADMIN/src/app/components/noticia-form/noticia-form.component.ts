@@ -15,7 +15,7 @@ export class NoticiaFormComponent implements OnInit {
     'Politica',
     'Economia',
     'Local',
-    'Deportes'
+    'Deporte'
   ];
 
   noticia: Noticia = {

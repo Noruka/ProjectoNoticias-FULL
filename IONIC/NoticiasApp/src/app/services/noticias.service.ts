@@ -22,7 +22,7 @@ export class NoticiasService {
   }
 
   getNoticiaSeccion(seccion: string) {
-    return this.http.get(`${this.API_URI}/noticias/seccion/${seccion}`);
+    return this.http.get<Noticia[]>(`${this.API_URI}/noticias/seccion/${seccion}`);
   }
 
   getComentarios(id: string) {
