@@ -14,7 +14,6 @@ export class ComentariosComponent implements OnInit {
 
     mostrar = 0;
     contador = 0;
-    noticiaId = "";
 
     noticia: Noticia = {
         id: 0,
@@ -58,12 +57,14 @@ export class ComentariosComponent implements OnInit {
           )
     }
 
-    this.getComentarios()
+        this.getComentarios(params.id)
+
+      this.loadData(null);
 
   }
 
-  getComentarios(){
-      this.noticiasService.getComentarios(this.noticia.id+"").subscribe(
+  getComentarios(id: string){
+      this.noticiasService.getComentarios(id).subscribe(
           res => {
               console.log(this.comentario.noticiaId);
               this.comentarios = res;
@@ -89,7 +90,7 @@ export class ComentariosComponent implements OnInit {
         console.log('Cargando siguientes ...');
         setTimeout(() => {
 
-            this.getComentarios();
+            this.getComentarios(this.noticia.id+"");
 
             if ( this.data.length > this.comentarios.length ) {
                 event.target.complete();

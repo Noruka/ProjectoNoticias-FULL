@@ -6,7 +6,7 @@
         <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
 
-    <ion-card color="medium">
+    <ion-card color="light">
         <ion-card-header>
             <ion-img src="{{ noticia.imagen }}"></ion-img>
             <ion-card-title>{{ noticia.titulo }}</ion-card-title>
@@ -16,9 +16,20 @@
             <ion-text>
                 {{ noticia.contenido }}
             </ion-text>
+            <ion-card-subtitle>{{ noticia.seccion }}</ion-card-subtitle>
             <ion-card-subtitle>{{ noticia.autor }} - {{ noticia.fecha | date: 'yyyy-MM-dd' }}</ion-card-subtitle>
         </ion-card-content>
     </ion-card>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="share"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button href="https://twitter.com/CentroProgresa"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+            <ion-fab-button href="https://www.instagram.com/progresaformacion/"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
 
     <app-comentarios>
 
