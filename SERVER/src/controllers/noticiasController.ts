@@ -4,7 +4,7 @@ import pool from '../../database';
 class NoticiasController {
 
     public async list (req: Request, res: Response) {
-        const noticias = await pool.then((r:any) => r.query('SELECT * FROM noticias'));
+        const noticias = await pool.then((r:any) => r.query('SELECT * FROM noticias ORDER BY fecha DESC'));
         res.json(noticias);
     }
 

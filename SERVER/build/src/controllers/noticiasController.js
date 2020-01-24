@@ -16,7 +16,7 @@ const database_1 = __importDefault(require("../../database"));
 class NoticiasController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const noticias = yield database_1.default.then((r) => r.query('SELECT * FROM noticias'));
+            const noticias = yield database_1.default.then((r) => r.query('SELECT * FROM noticias ORDER BY fecha DESC'));
             res.json(noticias);
         });
     }
