@@ -1,5 +1,22 @@
-<app-header titulo="{{noticia.titulo}}"></app-header>
+<app-header></app-header>
 
 <ion-content>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-img src="{{ noticia.imagen }}"></ion-img>
+            <ion-item-divider></ion-item-divider>
+            <ion-card-title>{{ noticia.titulo }}</ion-card-title>
+            <ion-card-subtitle>{{ noticia.subtitulo }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-card-subtitle>{{ noticia.autor }} - {{ noticia.fecha | date: 'yyyy-MM-dd' }}</ion-card-subtitle>
+            <ion-text>
+                {{ noticia.contenido }}
+            </ion-text>
+        </ion-card-content>
+    </ion-card>
+
+
 
 </ion-content>

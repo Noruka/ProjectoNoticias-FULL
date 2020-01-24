@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Inicio</ion-title>
-  </ion-toolbar>
+  <ion-toolbar color="secondary">
   <ion-buttons slot="start">
     <ion-menu-button menu="primerMenu" color="primary"></ion-menu-button>
+    <a routerLink="/inicio"><ion-img src="https://www.diariodemallorca.es/elementosWeb/mediaweb/images1024/cabecera/cabecera.svg"></ion-img></a>
   </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <!-- -->
@@ -17,12 +17,14 @@
 
   <ion-list>
     <ion-item *ngFor="let noticia of data">
-      <ion-card mode="ios" color="primary" button="true" routerDirection="mostrar-noticia">
+      <ion-card mode="ios" color="dark" button="true" [routerLink]="['/mostrar-noticia/',noticia.id]">
         <ion-card-header>
           <img src="{{ noticia.imagen }}">
+        </ion-card-header>
+        <ion-card-content>
           <ion-card-title>{{ noticia.titulo }}</ion-card-title>
           <ion-card-subtitle>{{ noticia.autor }}</ion-card-subtitle>
-        </ion-card-header>
+        </ion-card-content>
       </ion-card>
     </ion-item>
   </ion-list>

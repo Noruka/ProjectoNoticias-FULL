@@ -24,16 +24,4 @@ export class NoticiasService {
     return this.http.get(`${this.API_URI}/noticias/seccion/${seccion}`);
   }
 
-  saveNoticia( noticia: Noticia ) {
-    return this.http.post(`${this.API_URI}/noticias`, noticia);
-  }
-
-  deleteNoticia( id: string) {
-    return this.http.delete(`${this.API_URI}/noticias/${id}`);
-  }
-
-  updateNoticia( id: string|number, updatedNoticia: Noticia): Observable<Noticia> {
-    return this.http.put(`${this.API_URI}/noticias/${id}`, updatedNoticia);
-  }
-
 }

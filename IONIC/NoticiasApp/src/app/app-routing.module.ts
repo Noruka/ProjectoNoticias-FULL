@@ -10,7 +10,12 @@ const routes: Routes = [
   {
     path: 'mostrar-noticia',
     loadChildren: () => import('./pages/mostrar-noticia/mostrar-noticia.module').then( m => m.MostrarNoticiaPageModule)
-  },  {
+  },
+  {
+    path: 'mostrar-noticia/:id',
+    loadChildren: () => import('./pages/mostrar-noticia/mostrar-noticia.module').then( m => m.MostrarNoticiaPageModule)
+  },
+  {
     path: 'actualidad',
     loadChildren: () => import('./pages/secciones/actualidad/actualidad.module').then( m => m.ActualidadPageModule)
   },

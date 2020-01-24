@@ -45,8 +45,11 @@ export class InicioPage implements OnInit {
             this.contador = 0;
             this.pipo = 0;
 
+
+
             this.getNoticias();
             this.loadData(null);
+
 
             event.target.complete();
         }, 2000);
@@ -71,7 +74,7 @@ export class InicioPage implements OnInit {
         }
 
         const nuevoArr = Array(this.pipo);
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < nuevoArr.length; i++) {
             if (this.contador < this.noticias.length) {
             nuevoArr[i] = this.noticias[this.contador];
             this.contador++;
@@ -79,6 +82,7 @@ export class InicioPage implements OnInit {
         }
         this.data.push( ...nuevoArr);
         event.target.complete();
+
         }, 1000 );
     }
 
