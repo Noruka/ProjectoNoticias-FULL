@@ -1,19 +1,19 @@
-<div class="col-md-4" *ngFor="let noticia of noticias">
-  <div class="card" style="width: 18rem;">
-    <img [src]="noticia.imagen" class="card-img-top">
-    <div class="card-body">
+<div class="col-md-4" *ngFor="let noticia of noticias"> <!-- for para mostrar todas las noticias de la lista -->
+  <div class="card" style="width: 18rem;"> <!-- crea un div de tipo card para mostrar la informacion de forma bonita -->
+    <img [src]="noticia.imagen" class="card-img-top"> <!-- muestra una imagen en la parte card-img -->
+    <div class="card-body"> <!-- card-body donde se muestra la informacion del card -->
       <h4 class="card-title">{{ noticia.titulo }}</h4>
       <h5 class="card-subtitle">{{ noticia.subtitulo }}</h5>
       <br>
-      <p class="card-text">{{ noticia.contenido }}</p>
+      <p class="card-text">{{ noticia.contenido }}</p> <!-- informacion extraida de cada noticia del for -->
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ noticia.autor }}</li>
+        <li class="list-group-item">{{ noticia.fecha  | date: 'yyyy-MM-dd' }} -- {{ noticia.seccion }}</li>
+      </ul>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ noticia.autor }}</li>
-      <li class="list-group-item">{{ noticia.fecha  | date: 'yyyy-MM-dd' }} -- {{ noticia.seccion }}</li>
-    </ul>
     <div class="card-body">
-      <a href="" class="btn btn-info btn-block" [routerLink]="['/noticias/edit',noticia.id]">Editar noticia</a>
-      <button class="btn btn-danger btn-block" (click)="deleteNoticia(noticia.id)"><i class="far fa-trash-alt"></i></button>
+      <a href="" class="btn btn-info btn-block" [routerLink]="['/noticias/edit',noticia.id]">Editar noticia</a> <!-- boton que te envia al componente form pero con params de editar una noticia -->
+      <button class="btn btn-danger btn-block" (click)="deleteNoticia(noticia.id)"><i class="far fa-trash-alt"></i></button> <!-- boton que ejecuta la funcion borrar noticia del .ts -->
     </div>
   </div>
 </div>

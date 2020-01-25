@@ -8,3 +8,5 @@ export interface Noticia {
   fecha?: Date;
   contenido?: string;
 }
+
+/*interfaz de una noticia*/

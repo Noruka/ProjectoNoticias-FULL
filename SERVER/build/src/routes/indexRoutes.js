@@ -8,7 +8,7 @@ class IndexRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', indexController_1.indexController.index);
+        this.router.get('/', indexController_1.indexController.index); /*(get)localhost:PUERTO(3000)/ -> lo he cambiado para que te redirija al servidor y pagina de angular admin */
     }
 }
 const indexRoutes = new IndexRoutes();

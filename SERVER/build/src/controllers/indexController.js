@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class IndexController {
     index(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            res.redirect('http://localhost:4200/noticias');
+            res.redirect('http://localhost:4200/noticias'); /*Redirije a la pagina admin (tiene que estar siendo hosteada)*/
         });
     }
 }

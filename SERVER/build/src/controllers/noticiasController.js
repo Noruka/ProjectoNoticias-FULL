@@ -17,7 +17,7 @@ class NoticiasController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const noticias = yield database_1.default.then((r) => r.query('SELECT * FROM noticias ORDER BY fecha DESC'));
-            res.json(noticias);
+            res.json(noticias); /*Devuelve un json con la lista entera de noticias*/
         });
     }
     getOne(req, res) {
@@ -28,6 +28,7 @@ class NoticiasController {
                 return res.json(noticias[0]);
             }
             res.status(404).json({ text: 'La Noticia no existe' });
+            /*Devuelve un json con una noticia dado un id*/
         });
     }
     getListSeccion(req, res) {
@@ -35,12 +36,14 @@ class NoticiasController {
             const { seccion } = req.params;
             const noticias = yield database_1.default.then((r) => r.query('SELECT * FROM noticias WHERE seccion = ? ORDER BY fecha DESC', [seccion]));
             return res.json(noticias);
+            /*Devuelve un json con una lista de noticias dado una seccion*/
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.then((r) => r.query('INSERT INTO noticias set ?', [req.body]));
             res.json({ message: 'Noticia guardada' });
+            /*envia un json con una noticia y la guarda en la base de datos*/
         });
     }
     delete(req, res) {
@@ -48,6 +51,7 @@ class NoticiasController {
             const { id } = req.params;
             yield database_1.default.then((r) => r.query('DELETE FROM noticias WHERE id = ?', [id]));
             res.json({ message: 'La Noticia ha sido eliminada' });
+            /*dado un id borra una noticia de la base de datos*/
         });
     }
     update(req, res) {
@@ -55,6 +59,7 @@ class NoticiasController {
             const { id } = req.params;
             yield database_1.default.then((r) => r.query('UPDATE noticias set ? WHERE id = ?', [req.body, id]));
             res.json({ message: 'La Noticia se ha actualizado' });
+            /*dado un json con una noticia actualiza la informacion de la misma en la base de datos*/
         });
     }
     getComentarios(req, res) {
@@ -62,12 +67,14 @@ class NoticiasController {
             const { id } = req.params;
             const comentarios = yield database_1.default.then((r) => r.query('SELECT * FROM comentarios WHERE noticiaId = ?', [id]));
             return res.json(comentarios);
+            /*dado un id de noticia devuelve un json con una lista de comentarios de esa noticia*/
         });
     }
     postComentario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.then((r) => r.query('INSERT INTO comentarios set ?', [req.body]));
             res.json({ message: 'Comentario guardado' });
+            /*dado un json de comentario guarda ese comentario en la base de datos*/
         });
     }
 }

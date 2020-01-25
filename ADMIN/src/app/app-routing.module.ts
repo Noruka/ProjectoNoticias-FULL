@@ -23,7 +23,7 @@ const routes: Routes = [
     component: NoticiaFormComponent
   }
 ];
-
+/*las rutas de la pagina de admin, para cargar los componentes*/
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

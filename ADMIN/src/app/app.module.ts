@@ -10,6 +10,8 @@ import {NoticiasService} from "./services/noticias.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 
+/*exportacion de componentes y servicios*/
+
 @NgModule({
   declarations: [
     AppComponent,
