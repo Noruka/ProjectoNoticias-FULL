@@ -9,6 +9,8 @@ import {Comentario} from "../models/Comentario";
 })
 export class NoticiasService {
 
+  /*lo mismo que en la pagina de angular. funciones que devuelven json's de la api*/
+
   API_URI = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }

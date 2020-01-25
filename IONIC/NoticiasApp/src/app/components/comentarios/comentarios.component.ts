@@ -11,7 +11,7 @@ import {IonInfiniteScroll} from "@ionic/angular";
   styleUrls: ['./comentarios.component.scss'],
 })
 export class ComentariosComponent implements OnInit {
-
+    /*todo lo necesario para el infinite scroll y cargar la informacion*/
     mostrar = 0;
     contador = 0;
 
@@ -51,15 +51,15 @@ export class ComentariosComponent implements OnInit {
       this.noticiasService.getNoticia(params.id)
           .subscribe(
               res => {
-                console.log(res);
+                console.log(res); /*carga la informacion de la noticia que has seleccionado, sacando el id de la ruta*/
                 this.noticia = res;
               },err => console.error(err)
           )
     }
 
-        this.getComentarios(params.id)
+        this.getComentarios(params.id); /*carga los comentarios de la noticia*/
 
-      this.loadData(null);
+      this.loadData(null); /*muestra 5 comentarios*/
 
   }
 
@@ -86,6 +86,7 @@ export class ComentariosComponent implements OnInit {
         )
   }
 
+  /*infinite scroll. Explicado en la pagina de inicio*/
     loadData(event) {
         console.log('Cargando siguientes ...');
         setTimeout(() => {
@@ -94,7 +95,7 @@ export class ComentariosComponent implements OnInit {
 
             if ( this.data.length > this.comentarios.length ) {
                 event.target.complete();
-                console.log("data length bigger than comentarios length")
+                console.log("data length bigger than comentarios length");
                 this.infiniteScroll.disabled = true;
                 return;
             }

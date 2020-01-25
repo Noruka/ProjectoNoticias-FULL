@@ -7,7 +7,7 @@ import {MenuComponent} from "./menu/menu.component";
 import {ComentariosComponent} from "./comentarios/comentarios.component";
 import {FormsModule} from "@angular/forms";
 
-
+/*exportacion y declaracion de mis componentes como la importacion de otros componentes necesarios.*/
 
 @NgModule({
   declarations: [

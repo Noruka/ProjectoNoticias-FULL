@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
   constructor( private dataService: DataService ) { }
 
   ngOnInit() {
-    this.componentes = this.dataService.getMenuOpts();
+    this.componentes = this.dataService.getMenuOpts(); /*carga la lista de opciones del fichero /assets/data/menu.json */
   }
 
 }

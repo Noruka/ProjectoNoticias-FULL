@@ -5,3 +5,5 @@ export interface Comentario {
     correo?: string;
     comentario?: string;
 }
+
+/*modelo de un comentario*/

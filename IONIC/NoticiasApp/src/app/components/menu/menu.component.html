@@ -1,14 +1,14 @@
-<ion-menu side="start" menuId="primerMenu" contentId="principal">
+<ion-menu side="start" menuId="primerMenu" contentId="principal"><!-- menu lateral -->
 
   <ion-header>
     <ion-toolbar color="danger">
       <ion-title>
-        Menú Principal
+        Menú Principal <!-- barra superior (header) del menu -->
       </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content> <!-- carga la lista de opciones sacada de /assets/data/menu.json -->
     <ion-list>
       <ion-menu-toggle *ngFor="let c of componentes | async">
         <ion-item [routerLink]="c.redirectTo" detail>

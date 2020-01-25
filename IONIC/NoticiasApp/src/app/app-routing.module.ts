@@ -37,7 +37,7 @@ const routes: Routes = [
   },
 
 
-];
+]; /*rutas de la app*/
 
 @NgModule({
   imports: [

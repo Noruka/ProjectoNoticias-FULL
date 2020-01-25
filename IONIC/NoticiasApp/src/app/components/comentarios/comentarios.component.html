@@ -1,9 +1,9 @@
-<ion-card color="success">
+<ion-card color="success"><!-- simple formulario para crear y ver comentarios -->
 
-  <ion-card-content>
+  <ion-card-content><!-- formulario para crear comentarios-->
     <form>
       <ion-item>
-        <ion-input inoutmode="text" name="nombre" placeholder="Nombre" [(ngModel)]=" comentario.nombre" class="form-control" autofocus>
+        <ion-input inputmode="text" name="nombre" placeholder="Nombre" [(ngModel)]=" comentario.nombre" class="form-control" autofocus>
         </ion-input>
       </ion-item>
 
@@ -17,7 +17,7 @@
           </ion-textarea>
       </ion-item>
 
-      <ion-button class="btn btn-success btn-block" (click)="saveNewComentario()">
+      <ion-button class="btn btn-success btn-block" (click)="saveNewComentario()"> <!-- guarda el comentario en la base de datos dado el id de la noticia en el .ts -->
         GUARDAR
       </ion-button>
     </form>
@@ -27,7 +27,7 @@
     <ion-card-title>
       Comentarios
     </ion-card-title>
-    <ion-card-content>
+    <ion-card-content><!-- lista para mostrar los comentarios de cada noticia-->
       <ion-list>
         <ion-item *ngFor="let comentario of data">
           <ion-card mode="ios" color="secondary">
@@ -41,7 +41,7 @@
         </ion-item>
       </ion-list>
 
-      <ion-infinite-scroll threshold="50px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll threshold="50px" (ionInfinite)="loadData($event)"> <!-- infinite scroll para ir cargando las noticias -->
         <ion-infinite-scroll-content
                 loadingSpinner="crescent"
                 loadingText="Cargando...">
