@@ -7,13 +7,15 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- -->
+
 
 <ion-content>
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
   <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+
+  <!-- muestra todas las noticias, si le das a una noticia te lleva a la pagina mostrar-noticia y le envia el id de la noticia para mostrarla -->
 
   <ion-list>
     <ion-item *ngFor="let noticia of data">
