@@ -8,7 +8,7 @@
         <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
 
-    <ion-list>
+    <ion-list> <!-- lo mismo que inicio, listar todas las noticias, solo que esta vez muestra solo los de una seccion. Todas las secciones son iguales. -->
         <ion-item *ngFor="let noticia of data">
             <ion-card mode="ios" color="danger" button="true" [routerLink]="['/mostrar-noticia/',noticia.id]">
                 <ion-card-header>

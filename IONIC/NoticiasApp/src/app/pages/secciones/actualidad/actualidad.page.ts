@@ -13,7 +13,8 @@ import {NoticiasService} from "../../../services/noticias.service";
 })
 export class ActualidadPage implements OnInit {
 
-  seccion = "Actualidad";
+  /*lo mismo que en inicio pero esta vez mostrando solo una seccion*/
+  seccion = "Actualidad"; /*config de que seccion mostrar*/
   pipo = 0;
   contador = 0;
   noticias: Noticia[];
@@ -46,7 +47,7 @@ export class ActualidadPage implements OnInit {
       this.contador = 0;
       this.pipo = 0;
 
-      this.getNoticiaSeccion(this.seccion);
+      this.getNoticiaSeccion(this.seccion); /*coge la lista de noticias de la seccion especificada, lo mismo para cada pagina de seccion*/
       this.loadData(null);
 
       event.target.complete();

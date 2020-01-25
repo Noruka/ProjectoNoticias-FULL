@@ -10,6 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class MostrarNoticiaPage implements OnInit {
 
+    /*noticia vacia que solo se usa para lectura de vacio*/
     temp: Noticia = {
         id: 0,
         imagen: "http://paddlevan.es/wp-content/uploads/2017/08/sinimagen.png",
@@ -21,6 +22,7 @@ export class MostrarNoticiaPage implements OnInit {
         contenido: ""
     };
 
+    /*noticia inicializada*/
     noticia: Noticia = {
         id: 0,
         imagen: "http://paddlevan.es/wp-content/uploads/2017/08/sinimagen.png",
@@ -36,7 +38,7 @@ export class MostrarNoticiaPage implements OnInit {
 
   ngOnInit() {
 
-    this.getNoticia();
+    this.getNoticia(); /*coje la noticia cogiendo el id de los params*/
 
   }
 
@@ -49,12 +51,14 @@ export class MostrarNoticiaPage implements OnInit {
                       console.log(res);
                       this.noticia = res;
                       console.log(this.noticia);
-                      if (this.noticia.imagen == ""){
+                      if (this.noticia.imagen == ""){ /*si no hay imagen muestra un "sin imagen"*/
                           this.noticia.imagen = "http://paddlevan.es/wp-content/uploads/2017/08/sinimagen.png";
                       }
                   },err => console.error(err)
               ) }
   }
+
+    /*refrescar la noticia por si se actualiza la informacion*/
 
     doRefresh(event) {
         console.log('Begin async operation');

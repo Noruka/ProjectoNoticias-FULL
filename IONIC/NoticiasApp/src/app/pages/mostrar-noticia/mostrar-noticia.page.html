@@ -6,7 +6,7 @@
         <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
 
-    <ion-card color="light">
+    <ion-card color="light"> <!-- card para mostrar toda la informacion de una noticia -->
         <ion-card-header>
             <ion-img src="{{ noticia.imagen }}"></ion-img>
             <ion-card-title>{{ noticia.titulo }}</ion-card-title>
@@ -21,7 +21,7 @@
         </ion-card-content>
     </ion-card>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed"> <!-- muestra un fab con redes sociales -->
         <ion-fab-button>
             <ion-icon name="share"></ion-icon>
         </ion-fab-button>
@@ -31,7 +31,7 @@
         </ion-fab-list>
     </ion-fab>
 
-    <app-comentarios>
+    <app-comentarios> <!-- carga el componente de comentarios -->
 
     </app-comentarios>
 
