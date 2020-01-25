@@ -16,7 +16,7 @@ export class NoticiaFormComponent implements OnInit {
     'Economia',
     'Local',
     'Deporte'
-  ];
+  ]; /*array de secciones para el selector de secciones. Estas secciones tienen que ser iguales para cuando se llaman en ionic*/
 
   noticia: Noticia = {
     id: 0,
@@ -27,15 +27,17 @@ export class NoticiaFormComponent implements OnInit {
     autor: "",
     fecha: new Date(),
     contenido: ""
-  };
+  }; /*una noticia inicializada*/
 
-  edit = false;
+  edit = false; /*esto es por si se ha dado al boton de edit en una noticia*/
 
   @HostBinding('class') classes = 'row';
   constructor(private noticiasService: NoticiasService, private router: Router, private activatedRoute: ActivatedRoute) {
 
   }
 
+  /*al iniciarse coje la noticia de la base de datos y carga la informacion si es que hay (esto en el caso de que si en params.id hay algo)*/
+  /*si no simplemente es un formulario vacio para crear noticias*/
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
     if (params.id) {
@@ -49,6 +51,7 @@ export class NoticiaFormComponent implements OnInit {
         ) }
   }
 
+  /*funcion que guarda la noticia y te devuelve a la pagina principal*/
   saveNewNoticia() {
     delete this.noticia.fecha;
     delete this.noticia.id;
@@ -62,6 +65,7 @@ export class NoticiaFormComponent implements OnInit {
       )
   }
 
+  /*funcion que actualiza la noticia en la base de datos con la informacion de los formularios*/
   updateNoticia() {
     delete this.noticia.fecha;
     this.noticiasService.updateNoticia(this.noticia.id, this.noticia)

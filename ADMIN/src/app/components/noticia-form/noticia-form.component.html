@@ -1,7 +1,7 @@
 <div class="col-md-4 offset-md-2">
   <div class="card">
     <div class="card-body">
-      <form>
+      <form> <!-- formulario para crear o editar noticias -->
         <div class="form-group">
           <input type="text" name="title" placeholder="Titulo" [(ngModel)]=" noticia.titulo" class="form-control" autofocus>
 
@@ -15,14 +15,14 @@
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group"> <!-- esto es una lista. La lista se especifica en el .ts en el array secciones -->
           <label for="seccion">Seccion</label>
           <select class="form-control"  id="seccion" required [(ngModel)]="noticia.seccion" name="power">
             <option *ngFor="let seccion of secciones" [value]="seccion">{{seccion}}</option>
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"> <!-- textarea para poder escribir mucho texto. La base de datos esta hecha para guardar mediumtext en este campo. 16MB de texto -->
           <textarea name="description" placeholder="Contenido" [(ngModel)]=" noticia.contenido" rows="2" class="form-control">
 
           </textarea>
@@ -37,7 +37,7 @@
     </div>
   </div>
 </div>
-<div class="col-md-4">
+<div class="col-md-4"><!-- card para mostrar la informacion y ver como esta quedando -->
   <div class="card card-body text-center">
     <img [src]="noticia.imagen == '' ? '/assets/no-image-icon.png': noticia.imagen" class="card-img-top">
     <h3>
@@ -47,8 +47,9 @@
       {{ noticia.subtitulo == '' ? 'Subitulo Noticia' : noticia.subtitulo }}
     </h5>
     <p>{{ noticia.autor == '' ? 'Escribe el autor' : noticia.autor }}</p>
-    <p>{{ noticia.seccion == '' ? 'Escribe el autor' : noticia.autor }}</p>
+    <p>{{ noticia.seccion == '' ? 'Selecciona la seccion' : noticia.seccion }}</p>
     <p>{{ noticia.contenido == '' ? 'Escribe el contenido' : noticia.contenido }}</p>
     <p>{{ noticia.fecha | date: 'yyyy-MM-dd' }}</p>
   </div>
 </div>
+
