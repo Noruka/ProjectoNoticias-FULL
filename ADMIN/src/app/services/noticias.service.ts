@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class NoticiasService {
 
-  API_URI = 'http://localhost:3000/api'; /*la ruta default de la api*/
+  API_URI = 'http://170.253.46.76:3000/api'; /*la ruta default de la api*/
 
   constructor(private http: HttpClient ) { }
 

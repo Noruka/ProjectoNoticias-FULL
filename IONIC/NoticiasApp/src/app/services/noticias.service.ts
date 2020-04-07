@@ -11,6 +11,8 @@ export class NoticiasService {
 
   /*lo mismo que en la pagina de angular. funciones que devuelven json's de la api*/
 
+  //API_URI = 'http://170.253.46.76:3000/api';
+  //API_URI = 'http://192.168.1.134:3000/api';
   API_URI = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }

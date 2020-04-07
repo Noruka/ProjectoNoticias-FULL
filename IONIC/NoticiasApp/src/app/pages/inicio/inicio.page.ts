@@ -18,7 +18,6 @@ export class InicioPage implements OnInit {
     contador = 0; /*contador para saber que noticia hay que leer siguiente de la lista*/
     noticias: Noticia[]; /*array de todas las noticias*/
     componentes: Observable<Componente[]>; /*array de componentes del menu*/
-    noticiasAMostrar: 5; /*Aqui se especifican las noticias que se mostraran en cada refresh del infinite scroll*/
 
     @ViewChild(IonInfiniteScroll, {static: false}) infiniteScroll: IonInfiniteScroll;
     data: Noticia[] = []; /*array de noticias que se estan mostrando en el infinite scroll*/
@@ -70,7 +69,7 @@ export class InicioPage implements OnInit {
              Si las noticias que estoy mostrando(data) es mayor o igual a la lista de todas las noticias(noticias)
              entonces desactivara el infinite scroll. En caso de que quieras cargar noticias que añadas apartir de este momento
              puedes refrescar la pagina arriba del todo y pues se recargara la lista local*/
-        if ( this.data.length >= this.noticias.length ) {
+        if ( this.data.length > this.noticias.length ) {
             event.target.complete();
             this.infiniteScroll.disabled = true;
             return;
@@ -78,8 +77,8 @@ export class InicioPage implements OnInit {
 
         /*si la diferencia de la lista total, y la lista que estas mostrando es mayor o igual a 5, entonces se mostraran 5
         * si es menos entonces se mostrara la diferencia. Asi evito las cards vacias*/
-        if (this.noticias.length - this.data.length >= this.noticiasAMostrar) {
-            this.mostrar = this.noticiasAMostrar;
+        if (this.noticias.length - this.data.length >= 5) {
+            this.mostrar = 5;
         } else {
             this.mostrar = this.noticias.length - this.data.length;
         }
