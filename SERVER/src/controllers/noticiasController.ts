@@ -43,6 +43,7 @@ class NoticiasController {
         await pool.then((r: any) => r.query('UPDATE noticias set ? WHERE id = ?',[req.body, id]));
         res.json({message: 'La Noticia se ha actualizado'});
         /*dado un json con una noticia actualiza la informacion de la misma en la base de datos*/
+
     }
 
     public async getComentarios (req: Request, res: Response) {

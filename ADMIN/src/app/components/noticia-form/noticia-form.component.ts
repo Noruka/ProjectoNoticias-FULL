@@ -32,11 +32,13 @@ export class NoticiaFormComponent implements OnInit {
   edit = false; /*esto es por si se ha dado al boton de edit en una noticia*/
 
   @HostBinding('class') classes = 'row';
+
   constructor(private noticiasService: NoticiasService, private router: Router, private activatedRoute: ActivatedRoute) {
 
   }
 
   /*al iniciarse coje la noticia de la base de datos y carga la informacion si es que hay (esto en el caso de que si en params.id hay algo)*/
+
   /*si no simplemente es un formulario vacio para crear noticias*/
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
@@ -47,8 +49,9 @@ export class NoticiaFormComponent implements OnInit {
             console.log(res);
             this.noticia = res;
             this.edit = true;
-          },err => console.error(err)
-        ) }
+          }, err => console.error(err)
+        )
+    }
   }
 
   /*funcion que guarda la noticia y te devuelve a la pagina principal*/
